@@ -28,17 +28,14 @@ public class AdminController {
 
     @PutMapping("/{adminId}")
     public ResponseEntity<Admin> updateAdmin(@PathVariable String adminId, @RequestParam String username) {
-        Optional<Admin> optionalAdmin = adminService.selectAdminById(adminId);
-
-        if (optionalAdmin.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
-
         if (!adminService.updateUsername(adminId, username)) {
             return ResponseEntity.badRequest().build();
         }
 
-        return ResponseEntity.ok(optionalAdmin.get());
+        return adminService.selectAdminById(adminId)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+
     }
 
 //    TODO
