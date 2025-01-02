@@ -1,21 +1,24 @@
-package controller;
+package RealLive.RealLive.controller;
 
-import models.Admin;
+import RealLive.RealLive.models.Admin;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import service.AdminService;
+import org.springframework.web.bind.annotation.*;
+import RealLive.RealLive.service.AdminService;
 
 import java.util.Optional;
 
+/**
+ * A {@code RestController} for {@code admin}.
+ */
 @RestController
 @RequestMapping("/admins")
 public class AdminController {
     private final AdminService adminService = new AdminService();
+
+    @GetMapping("")
+    public ResponseEntity<String> index() {
+        return ResponseEntity.ok("Welcome to admin controller!");
+    }
 
     @PostMapping("")
     public ResponseEntity<Admin> createAdmin(@RequestParam String username) {

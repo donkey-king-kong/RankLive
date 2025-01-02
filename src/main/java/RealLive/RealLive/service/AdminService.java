@@ -1,14 +1,14 @@
-package service;
+package RealLive.RealLive.service;
 
-import models.Admin;
-import models.Leaderboard;
+import RealLive.RealLive.models.Admin;
+import RealLive.RealLive.models.Leaderboard;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 /**
- * Handles logic for {@code Admin}.
+ * A service to handle logic for {@code Admin}.
  */
 public class AdminService {
 

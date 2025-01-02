@@ -1,4 +1,4 @@
-package models;
+package RealLive.RealLive.models;
 
 public class Leaderboard {
     private String name;
