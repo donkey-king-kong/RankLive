@@ -1,9 +1,8 @@
-package models;
+package RealLive.RealLive.models;
 
-public class Player {
+public class Admin {
     private String id;
     private String userName;
-    private int points;
 
     public String getId() {
         return id;
@@ -19,13 +18,5 @@ public class Player {
 
     public void setUserName(String userName) {
         this.userName = userName;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
     }
 }
